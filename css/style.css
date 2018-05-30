@@ -1,0 +1,217 @@
+ @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+      *{
+      margin: 0px;
+      padding: 0px;
+      }
+      html,body{
+      width: 100%;
+      height: 100%;
+      font-family: "Roboto", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; 
+      }
+      /************************************************************/
+      header{
+      background:url("pics/header-city.png") center center no-repeat;
+      background-size:100%;
+      }
+      .wdw{
+      width: 100%;
+      height: 100%;
+      display: none;
+      }
+      /************************************************************/
+      #wdw-welcome{
+      font-family: "Roboto", sans-serif;
+      padding-top:50px; /*padding for navbar*/
+      background-color: #f7f7f7;
+      background-size:100%;
+      display: none;
+      }
+      #wdw-my-requests {
+      display: none;
+      }
+
+       #wdw-near-me {
+      display: none;
+      }
+      /************************************************************/
+      #wdw-login{
+      /*display: block;*/
+      background:url("pics/background2.png") center center no-repeat;
+      background-size:100%;
+      overflow:hidden;
+      }
+      #lblLoginError{
+      display: none;
+      }
+      #wdw-logout {
+      font-size: 14px;
+      }
+      #wdw-help-requests {
+      }
+      #btn-search-zip{
+      font-family: "Roboto", sans-serif;
+      }
+      /************************************************************/
+      /*********************LOGIN FORM***************************************/
+      .login-page {
+      width: 360px;
+      padding: 8% 0 0;
+      margin: auto;
+      }
+      .form {
+      position: relative;
+      z-index: 1;
+      background: #FFFFFF;
+      max-width: 360px;
+      margin: 0 auto 100px;
+      padding: 45px;
+      text-align: center;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+      }
+      .form input {
+      font-family: "Roboto", sans-serif;
+      outline: 0;
+      background: #f2f2f2;
+      width: 100%;
+      border: 0;
+      margin: 0 0 15px;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 14px;
+      }
+      .form button{
+      font-family: "Roboto", sans-serif;
+      text-transform: uppercase;
+      outline: 0;
+      background: #4CAF50;
+      width: 100%;
+      border: 0;
+      padding: 15px;
+      color: #FFFFFF;
+      font-size: 14px;
+      -webkit-transition: all 0.3 ease;
+      transition: all 0.3 ease;
+      cursor: pointer;
+      }
+      .form button:hover,.form button:active,.form button:focus, {
+      background: #43A047;
+      }
+      .all-buttons {
+      }
+      .btn-default {
+      background: #c8ccd0 !important;
+      }
+      .btn-success {
+      background: #4CAF50 !important;
+      }
+      .btn {
+      border-radius: 0 !important;
+      outline: none !important;
+      outline: 0;
+      border: 0;
+      text-shadow: none !important;
+      }
+      .form .message {
+      margin: 15px 0 0;
+      color: #b3b3b3;
+      font-size: 12px;
+      }
+      .form .message a {
+      color: #4CAF50;
+      text-decoration: none;
+      }
+      .form .register-form {
+      display: none;
+      }
+      .container {
+      position: relative;
+      z-index: 1;
+      max-width: 300px;
+      margin: 0 auto;
+      }
+      .container:before, .container:after {
+      content: "";
+      display: block;
+      clear: both;
+      }
+      .container .info {
+      margin: 50px auto;
+      text-align: center;
+      }
+      .container .info h1 {
+      margin: 0 0 15px;
+      padding: 0;
+      font-size: 36px;
+      font-weight: 300;
+      color: #1a1a1a;
+      }
+      .container .info span {
+      color: #4d4d4d;
+      font-size: 12px;
+      }
+      .container .info span a {
+      color: #000000;
+      text-decoration: none;
+      }
+      .container .info span .fa {
+      color: #EF3B3A;
+      }
+      /****************NAVIGATION********************************************/
+      .navbar-custom .icon-bar {
+      background-color:#fff;
+      font-family: "Roboto", sans-serif;
+      }
+      .navbar-custom {
+      background-color: #575756;
+      color:#fff;
+      }
+      .navbar-custom li>a:hover,.navbar-custom li>a:focus {
+      background-color:#6D4E6F;
+      }
+      .navbar-custom a{
+      color:#fefefe;
+      font-family: "Roboto", sans-serif;
+      }
+      .navbar-custom .form-control:focus {
+      border-color: #49bfff;
+      outline: 0;
+      -webkit-box-shadow: inset 0 0 0;
+      box-shadow: inset 0 0 0;
+      }
+      .navbar-nav {
+      padding-left: 4em ;
+      padding-right: 1em ;
+      }
+      .form-control {
+      border-radius: 0px !important;
+      }
+      input.form-control {
+      margin-right: 0.5em;
+      }
+      /****************HELP REQUESTS********************************************/
+      .request-box {
+      box-shadow: 0 1px 5px #ccc !important;
+      border-radius: 0px !important;
+      }
+      #main, #main>.row {
+      height:100%;
+      }
+      #main>.row {
+      overflow-y:scroll;
+      }
+      #left {
+      height:100%;
+      }
+      /****************MAPS WINDOW********************************************/
+      #map-canvas {
+      width:33.3333%;
+      height:calc(100% - 0);
+      position:absolute;
+      right:16px;
+      top:50px;
+      bottom:0;
+      overflow:hidden;
+      }
+      /************************************************************/
