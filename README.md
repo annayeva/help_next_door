@@ -1,3 +1,4 @@
+<h2>About Help Next Door project:</h2>
 
 Help Next Door's concept is a website where it is possible to connect with people living nearby in order to help each other with daily challenges, meanwhile socializing and expanding your network.
 Shortly, you share your free time to help someone today so that someone will help you tomorrow.
