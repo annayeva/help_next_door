@@ -1,7 +1,7 @@
 <?php
-   session_start(); 
+   session_start();
+   
    ?>
-
 <!DOCTYPE html>
 <html id="<?php 
    if (isset($_SESSION['user_id'])) {
@@ -14,10 +14,11 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
       <meta http-equiv="content-type" content="text/html; charset=UTF-8">
       <title>Help Next Door</title>
-      <link rel="stylesheet" href="css/style.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
 
       <script
          src="https://code.jquery.com/jquery-3.1.1.js"
@@ -33,13 +34,9 @@
       <!-- Latest compiled and minified JavaScript -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
    </head>
-   <style></style>
-   </head>
    <body>
-
   
 <audio id="notify-sound" src="sounds/notification.mp3" preload="auto"></audio>
-
    
       <!-- WELCOME -->
       <div id="wdw-welcome" class="wdw">
@@ -133,10 +130,52 @@
          </div>
       </div>
       <!-- END LOGIN -->
-    
+   
+   
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANqp5FvSLbrumLyBpohjcl1RHOUQwLyzE"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANqp5FvSLbrumLyBpohjcl1RHOUQwLyzE"
+         ></script>
+      <script>
 
+          /*********************LOG IN***************************************/
+          
+          $("#btnLogin").click(function(){
+          
+           //console.log ( "A");
+          
+           var sLoginUserName = $("#txtUserName").val();
+           var sLoginUserPass = $("#txtUserPassword").val();
+           var sApiLogin = "api-login.php?username="+sLoginUserName+"&pass="+sLoginUserPass;
+           console.log ( sApiLogin);
+           
+           $.getJSON(sApiLogin, function(jData){
+         
+             //console.log ( jData);
+             if( jData.status == "ok" ){
+                getUserData();
+               $(".wdw").hide();
+               $("#wdw-logout").text("Welcome " + jData.user);
+               //console.log("ss");
+               $("html").attr("id",jData.user_id);
+               initMap();
+               // google.maps.event.trigger(map, 'resize');
+               $("#wdw-welcome").show();
+               //console.log ( "OKAY!");
+     
+             }
+          
+             else {
+          
+               $(".wdw").hide();
+               $("#wdw-login").show();
+               $("#lblLoginError").show();
+               console.log ( "ERROR!");  
+             }
+           });
+          });
+
+      </script>
+      <!-- script references -->
       <script type = "text/javascript" language = "javascript" src="scripts/script.js"></script>
    </body>
 </html>
